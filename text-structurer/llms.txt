@@ -1,0 +1,14 @@
+# x402 Text Structurer
+
+> Convert free-form text into structured key-value pairs + entities. Lightweight and deterministic-first for reliable agent pipelines.
+
+## Free Discovery
+GET /catalog
+
+## Paid
+POST /api/structure
+Body: { "text": "..." }
+
+Returns keyValues object + entities (emails, urls, phones, dates, money amounts).
+
+Price ~0.015 USDC. Standard x402 flow.

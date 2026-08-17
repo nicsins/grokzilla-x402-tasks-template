@@ -1,0 +1,20 @@
+# x402 PII Redactor
+
+> Fast, deterministic PII scrubbing for AI agents. Pay per call with x402 / USDC on Base.
+
+## Free Discovery
+- GET /catalog – machine-readable list of services + prices
+- GET /api/redact – returns service metadata (no payment)
+
+## Paid Endpoint
+- POST /api/redact
+  - Body: { "text": "string", "options"?: { "maskChar": "*" } }
+  - Returns: { "redacted": "...", "stats": { "email": n, ... } }
+  - Price: ~0.01 USDC (configurable)
+
+## Payment
+Uses standard x402 flow. Server returns 402 + PAYMENT-REQUIRED header.
+Retry with PAYMENT-SIGNATURE.
+
+## Why agents use this
+Clean logs, protect user data before calling other tools, reduce compliance risk.

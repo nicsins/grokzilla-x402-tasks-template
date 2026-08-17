@@ -1,0 +1,15 @@
+# x402 CSV Normalizer
+
+> Clean messy CSV, TSV, or delimiter-separated text into reliable structured data. Perfect for agents ingesting user uploads or scraped tables.
+
+## Free
+- GET /catalog
+- GET /api/normalize (metadata)
+
+## Paid
+POST /api/normalize
+Body: { "text": "...", "options"?: { "header": true, "output": "json" | "csv" } }
+
+Price ~0.008 USDC
+
+Uses standard x402 payment flow.
