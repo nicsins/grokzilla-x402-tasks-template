@@ -1,0 +1,38 @@
+# x402 RAG Chunker
+
+> Deterministic, agent-friendly text chunking for RAG pipelines. Pay-per-call via x402 (USDC on Base).
+
+## Endpoints
+
+- GET /catalog – free discovery
+- GET /api/chunk – service info
+- POST /api/chunk – paid chunking
+
+## Pricing
+
+~0.006 – 0.02 USDC per call (default max 0.012 USDC)
+
+## Input
+
+```json
+{
+  "text": "your long document here...",
+  "options": {
+    "chunkSize": 512,
+    "overlap": 64,
+    "strategy": "sentence"
+  }
+}
+```
+
+## Output
+
+```json
+{
+  "success": true,
+  "chunks": ["chunk1", "chunk2", ...],
+  "meta": { "count": 12, "avgLength": 480, ... }
+}
+```
+
+Ideal for autonomous agents preparing context for vector stores or multi-step reasoning.
