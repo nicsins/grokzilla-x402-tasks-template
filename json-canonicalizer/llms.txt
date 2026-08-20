@@ -1,0 +1,39 @@
+# x402 JSON Canonicalizer
+
+> Produce deterministic, key-sorted JSON for hashing, cache keys and agent diffs. x402 micropayments (USDC on Base).
+
+## Endpoints
+
+- GET /catalog – free discovery
+- GET /api/canonicalize – service info
+- POST /api/canonicalize – paid canonicalization
+
+## Pricing
+
+~0.004 – 0.012 USDC per call (default max 0.008 USDC)
+
+## Input
+
+```json
+{
+  "data": { "b": 2, "a": 1, "nested": { "z": true, "y": null } },
+  "options": {
+    "sortArrays": false,
+    "removeNulls": true,
+    "space": 0
+  }
+}
+```
+
+## Output
+
+```json
+{
+  "success": true,
+  "canonical": "{\"a\":1,\"b\":2,\"nested\":{\"z\":true}}",
+  "parsed": { ... },
+  "hashHint": "a1b2c3d4"
+}
+```
+
+Agents use this before writing to vector stores, comparing configs, or generating stable cache keys.

@@ -1,0 +1,41 @@
+# x402 Token Counter
+
+> Fast approximate token counting for LLM budget & routing decisions. x402 micropayments (USDC on Base).
+
+## Endpoints
+
+- GET /catalog – free discovery
+- GET /api/count – service info
+- POST /api/count – paid token count
+
+## Pricing
+
+~0.003 – 0.01 USDC per call (default max 0.006 USDC)
+
+## Input
+
+```json
+{
+  "text": "your prompt or document here...",
+  "options": {
+    "model": "cl100k"
+  }
+}
+```
+
+Supported model hints: cl100k | o200k | approx | words | chars
+
+## Output
+
+```json
+{
+  "success": true,
+  "tokens": 142,
+  "chars": 687,
+  "words": 98,
+  "model": "cl100k",
+  "method": "cl100k-approx"
+}
+```
+
+Agents use this before choosing a model or deciding whether a long context fits the remaining budget.
