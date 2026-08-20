@@ -9,13 +9,21 @@ Each template is a production-ready Vercel Edge / serverless function with:
 - Deterministic or low-variance logic preferred by autonomous agents
 - Clear pricing, pay-to address placeholder, and network (Base USDC recommended)
 
-## Daily Generated Tasks (2026-08-17)
+## Daily Generated Tasks (2026-08-20)
 
 | Template | Price Guidance | Primary Use | Deploy Target |
 |----------|----------------|-------------|-----------------|
-| **pii-redactor** | $0.008 – $0.025 / call | Strip emails, phones, SSNs, cards, names from text before logging or LLM calls | Vercel Edge |
-| **csv-normalizer** | $0.005 – $0.015 / call | Clean messy CSV / TSV / delimiter chaos into clean JSON or CSV | Vercel Edge |
-| **text-structurer** | $0.01 – $0.03 / call | Extract key-value facts + entities from unstructured text into JSON | Vercel Edge |
+| **rag-chunker** | $0.006 – $0.02 / call | Sentence-aware overlapping chunks for RAG / vector pipelines | Vercel Edge |
+| **json-canonicalizer** | $0.004 – $0.012 / call | Deep key-sorted canonical JSON for hashing, caching & diffs | Vercel Edge |
+| **token-counter** | $0.003 – $0.01 / call | Approximate token counts (cl100k / o200k style) for budget & routing | Vercel Edge |
+
+### Previous batch (2026-08-17)
+
+| Template | Price Guidance | Primary Use | Deploy Target |
+|----------|----------------|-------------|-----------------|
+| **pii-redactor** | $0.008 – $0.025 / call | Strip emails, phones, SSNs, cards, names from text | Vercel Edge |
+| **csv-normalizer** | $0.005 – $0.015 / call | Clean messy CSV / TSV into clean JSON or CSV | Vercel Edge |
+| **text-structurer** | $0.01 – $0.03 / call | Extract key-value facts + entities into JSON | Vercel Edge |
 
 All templates are intentionally lightweight so agents can call them frequently without budget shock.
 
@@ -23,7 +31,7 @@ All templates are intentionally lightweight so agents can call them frequently w
 
 ```bash
 # Clone or download a template folder
-cd pii-redactor
+cd rag-chunker   # or json-canonicalizer / token-counter
 npm install
 # Set env: PAY_TO_ADDRESS, FACILITATOR_URL (optional), NETWORK=base
 vercel deploy --prod
@@ -31,7 +39,7 @@ vercel deploy --prod
 
 After deploy:
 
-1. Update the pay-to address and price in the middleware.
+1. Update the pay-to address and price in the route handler.
 2. Add the live URL to your `/catalog` aggregator or list on x402 Bazaar / Agent Bazaar.
 3. Point `llms.txt` and `AGENTS.md` at the new endpoint.
 
@@ -40,7 +48,7 @@ After deploy:
 Every service uses the same lightweight pattern:
 
 ```ts
-// middleware / edge handler
+// inside the route handler
 if (!hasValidPayment(req)) {
   return new Response(JSON.stringify({
     error: "Payment Required",
@@ -49,7 +57,7 @@ if (!hasValidPayment(req)) {
       network: "base",
       maxAmountRequired: "10000", // 0.01 USDC in atomic units
       resource: req.url,
-      description: "PII redaction of input text",
+      description: "...",
       mimeType: "application/json",
       payTo: process.env.PAY_TO_ADDRESS,
     }]
@@ -79,5 +87,5 @@ MIT. Built for the Grokzilla / Dragonscale agent economy.
 Daily variants are pushed here and mirrored to Google Drive for offline use.
 
 ---
-Generated 2026-08-17 by Grok + Geta-Paida team.  
-Next daily batch will add more specialized microservices.
+Generated 2026-08-20 by Grok + Geta-Paida team.  
+Next daily batch will continue expanding the specialized microservice catalog.
