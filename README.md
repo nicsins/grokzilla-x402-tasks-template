@@ -9,7 +9,15 @@ Each template is a production-ready Vercel Edge / serverless function with:
 - Deterministic or low-variance logic preferred by autonomous agents
 - Clear pricing, pay-to address placeholder, and network (Base USDC recommended)
 
-## Daily Generated Tasks (2026-08-20)
+## Daily Generated Tasks (2026-08-21)
+
+| Template | Price Guidance | Primary Use | Deploy Target |
+|----------|----------------|-------------|-----------------|
+| **html-cleaner** | $0.005 – $0.015 / call | HTML → clean text or lightweight markdown (strip scripts/styles/noise) | Vercel Edge |
+| **json-schema-validator** | $0.004 – $0.012 / call | Lightweight deterministic JSON Schema validation for agent contracts | Vercel Edge |
+| **keyword-extractor** | $0.005 – $0.018 / call | Frequency + TF keyword/keyphrase extraction for RAG, tagging & routing | Vercel Edge |
+
+### Previous batch (2026-08-20)
 
 | Template | Price Guidance | Primary Use | Deploy Target |
 |----------|----------------|-------------|-----------------|
@@ -17,7 +25,7 @@ Each template is a production-ready Vercel Edge / serverless function with:
 | **json-canonicalizer** | $0.004 – $0.012 / call | Deep key-sorted canonical JSON for hashing, caching & diffs | Vercel Edge |
 | **token-counter** | $0.003 – $0.01 / call | Approximate token counts (cl100k / o200k style) for budget & routing | Vercel Edge |
 
-### Previous batch (2026-08-17)
+### Earlier (2026-08-17)
 
 | Template | Price Guidance | Primary Use | Deploy Target |
 |----------|----------------|-------------|-----------------|
@@ -31,7 +39,7 @@ All templates are intentionally lightweight so agents can call them frequently w
 
 ```bash
 # Clone or download a template folder
-cd rag-chunker   # or json-canonicalizer / token-counter
+cd html-cleaner   # or json-schema-validator / keyword-extractor
 npm install
 # Set env: PAY_TO_ADDRESS, FACILITATOR_URL (optional), NETWORK=base
 vercel deploy --prod
@@ -87,5 +95,5 @@ MIT. Built for the Grokzilla / Dragonscale agent economy.
 Daily variants are pushed here and mirrored to Google Drive for offline use.
 
 ---
-Generated 2026-08-20 by Grok + Geta-Paida team.  
+Generated 2026-08-21 by Grok + Geta-Paida team.  
 Next daily batch will continue expanding the specialized microservice catalog.

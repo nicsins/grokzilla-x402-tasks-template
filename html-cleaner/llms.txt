@@ -1,0 +1,38 @@
+# x402 HTML Cleaner
+
+> Deterministic HTML → clean text / markdown conversion for agents. Strips scripts, styles, tracking, and noise. Pay-per-call via x402 (USDC on Base).
+
+## Endpoints
+
+- GET /catalog – free discovery
+- GET /api/clean – service info
+- POST /api/clean – paid cleaning
+
+## Pricing
+
+~0.005 – 0.015 USDC per call (default max 0.01 USDC)
+
+## Input
+
+```json
+{
+  "html": "<html>...</html>",
+  "options": {
+    "format": "text|markdown",
+    "keepLinks": false,
+    "maxLength": 50000
+  }
+}
+```
+
+## Output
+
+```json
+{
+  "success": true,
+  "text": "cleaned content...",
+  "meta": { "originalBytes": 12345, "cleanedBytes": 3200, "linksRemoved": 12 }
+}
+```
+
+Ideal for autonomous agents ingesting web pages before RAG, summarization, or tool use.
