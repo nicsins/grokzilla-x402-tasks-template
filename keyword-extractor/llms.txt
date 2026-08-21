@@ -1,0 +1,42 @@
+# x402 Keyword Extractor
+
+> Fast, deterministic keyword & keyphrase extraction (frequency + simple TF scoring) for RAG, tagging, and routing. Fully offline. Pay-per-call via x402 (USDC on Base).
+
+## Endpoints
+
+- GET /catalog – free discovery
+- GET /api/extract – service info
+- POST /api/extract – paid extraction
+
+## Pricing
+
+~0.005 – 0.018 USDC per call (default max 0.01 USDC)
+
+## Input
+
+```json
+{
+  "text": "long document or paragraph...",
+  "options": {
+    "topK": 15,
+    "minLength": 3,
+    "includePhrases": true,
+    "stopwords": "en"
+  }
+}
+```
+
+## Output
+
+```json
+{
+  "success": true,
+  "keywords": [
+    { "term": "agent economy", "score": 0.87, "count": 4 },
+    ...
+  ],
+  "meta": { "tokenCount": 842, "uniqueTerms": 312 }
+}
+```
+
+Ideal for autonomous agents building indexes, selecting tools, or generating tags without heavy NLP models.

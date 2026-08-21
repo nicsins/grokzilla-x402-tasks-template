@@ -1,0 +1,36 @@
+# x402 JSON Schema Validator
+
+> Lightweight, deterministic JSON Schema validation + optional coercion for agent pipelines. No external deps beyond core. Pay-per-call via x402 (USDC on Base).
+
+## Endpoints
+
+- GET /catalog – free discovery
+- GET /api/validate – service info
+- POST /api/validate – paid validation
+
+## Pricing
+
+~0.004 – 0.012 USDC per call (default max 0.008 USDC)
+
+## Input
+
+```json
+{
+  "data": { ... },
+  "schema": { "type": "object", "properties": {...}, "required": [...] },
+  "options": { "coerce": false, "removeAdditional": false }
+}
+```
+
+## Output
+
+```json
+{
+  "success": true,
+  "valid": true,
+  "errors": [],
+  "coerced": { ... }   // only if coerce=true and valid
+}
+```
+
+Perfect for agents that need to enforce contracts before downstream calls or storage.
