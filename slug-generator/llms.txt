@@ -1,0 +1,39 @@
+# x402 Slug Generator
+
+> Deterministic text → clean URL/SEO slug for agents. Custom separator, length limits, strict mode. Pay-per-call via x402 (USDC on Base).
+
+## Endpoints
+
+- GET /catalog – free discovery
+- GET /api/slugify – service info
+- POST /api/slugify – paid slug generation
+
+## Pricing
+
+~0.003 – 0.01 USDC per call (default max ~0.008 USDC)
+
+## Input
+
+```json
+{
+  "text": "Hello World! This is a Test Title 2026",
+  "options": {
+    "separator": "-",
+    "lower": true,
+    "maxLength": 80,
+    "strict": true
+  }
+}
+```
+
+## Output
+
+```json
+{
+  "success": true,
+  "slug": "hello-world-this-is-a-test-title-2026",
+  "meta": { "originalLength": 38, "slugLength": 36 }
+}
+```
+
+Ideal for autonomous agents building routes, file names, cache keys, or content identifiers.
