@@ -9,7 +9,15 @@ Each template is a production-ready Vercel Edge / serverless function with:
 - Deterministic or low-variance logic preferred by autonomous agents
 - Clear pricing, pay-to address placeholder, and network (Base USDC recommended)
 
-## Daily Generated Tasks (2026-09-01)
+## Daily Generated Tasks (2026-09-01 extended)
+
+| Template | Price Guidance | Primary Use | Deploy Target |
+|----------|----------------|-------------|-----------------|
+| **slug-generator** | $0.003 – $0.01 / call | Text → clean URL/SEO slug (custom sep, length, strict) | Vercel Edge |
+| **json-path-extractor** | $0.004 – $0.012 / call | Extract values from nested JSON by dotted / array paths | Vercel Edge |
+| **date-normalizer** | $0.003 – $0.009 / call | Loose dates & timestamps → ISO-8601 / unix | Vercel Edge |
+
+### Earlier today (2026-09-01)
 
 | Template | Price Guidance | Primary Use | Deploy Target |
 |----------|----------------|-------------|-----------------|
@@ -47,7 +55,7 @@ All templates are intentionally lightweight so agents can call them frequently w
 
 ```bash
 # Clone or download a template folder
-cd json-flattener   # or text-diff / url-normalizer
+cd slug-generator   # or json-path-extractor / date-normalizer / json-flattener ...
 npm install
 # Set env: PAY_TO_ADDRESS, FACILITATOR_URL (optional), NETWORK=base
 vercel deploy --prod
@@ -103,5 +111,5 @@ MIT. Built for the Grokzilla / Dragonscale agent economy.
 Daily variants are pushed here and mirrored to Google Drive for offline use.
 
 ---
-Generated 2026-09-01 by Grok + Geta-Paida team.  
+Generated / extended 2026-09-01 by Grok + Geta-Paida team.  
 Next daily batch will continue expanding the specialized microservice catalog.
