@@ -1,0 +1,47 @@
+# x402 URL Normalizer
+
+> Deterministic URL parsing, cleaning of tracking params, canonicalization, and component extraction for agents. Pay-per-call via x402 (USDC on Base).
+
+## Endpoints
+
+- GET /catalog – free discovery
+- GET /api/normalize – service info
+- POST /api/normalize – paid normalize
+
+## Pricing
+
+~0.003 – 0.01 USDC per call (default max 0.008 USDC)
+
+## Input
+
+```json
+{
+  "url": "https://example.com/path?utm_source=foo&id=123#hash",
+  "options": {
+    "stripTracking": true,
+    "forceHttps": true,
+    "lowercaseHost": true,
+    "removeFragment": false,
+    "sortQuery": true
+  }
+}
+```
+
+## Output
+
+```json
+{
+  "success": true,
+  "normalized": "https://example.com/path?id=123",
+  "components": {
+    "protocol": "https:",
+    "host": "example.com",
+    "pathname": "/path",
+    "searchParams": { "id": "123" },
+    "hash": ""
+  },
+  "meta": { "trackingRemoved": ["utm_source"], "changed": true }
+}
+```
+
+Ideal for autonomous agents deduplicating links, cleaning crawl results, or preparing URLs for storage/RAG.

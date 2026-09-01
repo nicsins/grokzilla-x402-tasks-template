@@ -1,0 +1,39 @@
+# x402 Text Diff
+
+> Lightweight deterministic text/JSON line & word diff for agents. Produces structured change sets or unified-style output. Pay-per-call via x402 (USDC on Base).
+
+## Endpoints
+
+- GET /catalog – free discovery
+- GET /api/diff – service info
+- POST /api/diff – paid diff
+
+## Pricing
+
+~0.005 – 0.015 USDC per call (default max 0.01 USDC)
+
+## Input
+
+```json
+{
+  "a": "original text or stringified JSON",
+  "b": "modified text or stringified JSON",
+  "options": {
+    "mode": "lines|words|chars",
+    "context": 2,
+    "format": "structured|unified"
+  }
+}
+```
+
+## Output
+
+```json
+{
+  "success": true,
+  "diff": [ /* structured ops or unified string */ ],
+  "meta": { "adds": 3, "removes": 1, "mode": "lines" }
+}
+```
+
+Ideal for autonomous agents doing change detection, version comparison, or patch generation before commits / RAG updates.
