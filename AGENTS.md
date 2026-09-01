@@ -12,7 +12,19 @@ These microservices are designed for autonomous agents.
 3. Prefer deterministic endpoints (all templates here are).
 4. Keep payloads token-efficient. These services return compact JSON.
 
-## Current Services (2026-08-20)
+## Current Services (2026-09-01)
+
+- **json-flattener** – Nested JSON → flat path-value map (arrays, custom separators, depth limits).
+- **text-diff** – Lightweight deterministic line/word/char diff (structured ops or unified output).
+- **url-normalizer** – Parse, strip tracking params, canonicalize & extract URL components.
+
+### Previous (2026-08-21)
+
+- **html-cleaner** – HTML → clean text or lightweight markdown.
+- **json-schema-validator** – Lightweight deterministic JSON Schema validation.
+- **keyword-extractor** – Frequency + TF keyword/keyphrase extraction.
+
+### Previous (2026-08-20)
 
 - **rag-chunker** – Sentence-aware overlapping text chunks for RAG pipelines.
 - **json-canonicalizer** – Deep recursive key sorting for deterministic JSON.
@@ -24,10 +36,10 @@ These microservices are designed for autonomous agents.
 - **csv-normalizer** – Fix messy tabular data.
 - **text-structurer** – Pull facts and entities from free text.
 
-All accept a special `x-test-payment: true` header for local testing only.  
+All accept a special `x-test-payment: true` header for local testing only.
 Never use in production.
 
 ## Pricing Philosophy
 
-Micro-transactions.  
+Micro-transactions.
 Agents should be able to call these dozens or hundreds of times without friction.
