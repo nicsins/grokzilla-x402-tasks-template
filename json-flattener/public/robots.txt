@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+Allow: /catalog
+Allow: /llms.txt
+Allow: /AGENTS.md
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
