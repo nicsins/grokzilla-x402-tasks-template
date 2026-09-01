@@ -1,0 +1,64 @@
+{
+  "generated": "2026-09-01",
+  "protocol": "x402",
+  "network": "eip155:8453",
+  "asset": "USDC",
+  "source_repo": "https://github.com/nicsins/grokzilla-x402-tasks-template",
+  "drive_zip": "https://drive.google.com/file/d/1iPMJk6vtQ_tOn8O4--aoxTjXZRUbaa-P/view",
+  "submit_when_live": [
+    "https://x402-list.com/",
+    "https://x402bazaar.org/",
+    "https://api.cdp.coinbase.com/platform/v2/x402/discovery/resources"
+  ],
+  "services": [
+    {
+      "id": "json-flattener",
+      "name": "x402 JSON Flattener",
+      "category": "data-prep",
+      "price_atomic": "10000",
+      "price_usdc": "0.01",
+      "guidance": "0.004-0.012 USDC",
+      "method": "POST",
+      "path": "/api/flatten",
+      "free": ["/catalog", "/llms.txt"],
+      "description": "Deterministic nested JSON to flat path-value map. Arrays, custom separators, depth limits. Agent-ready.",
+      "tags": ["json", "flatten", "rag", "deterministic"],
+      "listing_ready": false,
+      "blocker": "needs live production URL + PAY_TO_ADDRESS"
+    },
+    {
+      "id": "text-diff",
+      "name": "x402 Text Diff",
+      "category": "text-ops",
+      "price_atomic": "10000",
+      "price_usdc": "0.01",
+      "guidance": "0.005-0.015 USDC",
+      "method": "POST",
+      "path": "/api/diff",
+      "free": ["/catalog", "/llms.txt"],
+      "description": "Lightweight line/word/char diff. Structured ops or unified output. Deterministic.",
+      "tags": ["diff", "text", "change-detection", "deterministic"],
+      "listing_ready": false,
+      "blocker": "needs live production URL + PAY_TO_ADDRESS"
+    },
+    {
+      "id": "url-normalizer",
+      "name": "x402 URL Normalizer",
+      "category": "web-utils",
+      "price_atomic": "8000",
+      "price_usdc": "0.008",
+      "guidance": "0.003-0.01 USDC",
+      "method": "POST",
+      "path": "/api/normalize",
+      "free": ["/catalog", "/llms.txt"],
+      "description": "Parse URLs, strip tracking params, force HTTPS, sort query, extract components.",
+      "tags": ["url", "canonical", "tracking", "deterministic"],
+      "listing_ready": false,
+      "blocker": "needs live production URL + PAY_TO_ADDRESS"
+    }
+  ],
+  "validator": {
+    "legitimacy": "green",
+    "notes": "No guaranteed-income claims. Transparent micro-pricing. Free discovery endpoints. Deterministic outputs. Marketplace listings deferred until HTTPS + 402 probe pass."
+  }
+}
