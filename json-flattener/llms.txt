@@ -1,0 +1,42 @@
+# x402 JSON Flattener
+
+> Deterministic nested JSON → flat path-value map for agents. Supports arrays, deep objects, custom separators. Pay-per-call via x402 (USDC on Base).
+
+## Endpoints
+
+- GET /catalog – free discovery
+- GET /api/flatten – service info
+- POST /api/flatten – paid flatten
+
+## Pricing
+
+~0.004 – 0.012 USDC per call (default max 0.01 USDC)
+
+## Input
+
+```json
+{
+  "data": { "nested": { "key": "value", "arr": [1, 2] } },
+  "options": {
+    "separator": ".",
+    "arrayStyle": "index|bracket",
+    "maxDepth": 20
+  }
+}
+```
+
+## Output
+
+```json
+{
+  "success": true,
+  "flat": {
+    "nested.key": "value",
+    "nested.arr.0": 1,
+    "nested.arr.1": 2
+  },
+  "meta": { "keys": 3, "depth": 2 }
+}
+```
+
+Ideal for autonomous agents preparing data for vector stores, caching keys, or simple key-value stores.
