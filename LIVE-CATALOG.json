@@ -1,0 +1,15 @@
+{
+  "name": "Grokzilla Cash Desk",
+  "updated": "2026-09-01",
+  "network": "base",
+  "payTo": "0xDa1Eab46918882f8656a41cF9fCa80e2415369d1",
+  "asset": "USDC",
+  "assetAddress": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "services": [
+    {"id": "html-cleaner", "path": "/api/clean", "priceUsd": 0.01},
+    {"id": "json-schema-validator", "path": "/api/validate", "priceUsd": 0.008},
+    {"id": "keyword-extractor", "path": "/api/extract", "priceUsd": 0.01},
+    {"id": "pii-redactor", "path": "/api/redact", "priceUsd": 0.01},
+    {"id": "token-counter", "path": "/api/tokens", "priceUsd": 0.004}
+  ]
+}
