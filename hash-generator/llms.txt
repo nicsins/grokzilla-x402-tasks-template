@@ -1,0 +1,21 @@
+# x402 Hash Generator
+
+> Fast, deterministic cryptographic hashing for agents. SHA-256 (default), SHA-1, MD5, SHA-512. Perfect for content addressing, cache keys, and integrity checks. Pay per call with x402 (USDC on Base).
+
+## Paid Endpoint
+
+- POST /api/hash
+  - Input: `{ "text": "..." | object, "algorithm": "sha256|sha1|md5|sha512" }`
+  - Output: `{ "success": true, "hash": "hex...", "meta": {...} }`
+  - Price: ~0.006 USDC
+
+## Free Discovery
+
+- GET /catalog
+- GET / (service card)
+
+## Why agents use it
+
+- Pure crypto, zero side effects
+- Content-addressable storage keys
+- Cheap enough for high-frequency use
