@@ -1,0 +1,29 @@
+[
+  {
+    "name": "x402-case-converter",
+    "description": "Deterministic text case conversion (snake, camel, kebab, pascal, constant, title, lower, upper). Agent-native data cleaning primitive.",
+    "price": "0.007 USDC",
+    "network": "base",
+    "endpoint": "POST /api/convert",
+    "catalog": "GET /catalog",
+    "tags": ["text", "case", "naming", "data-cleaning", "agent"]
+  },
+  {
+    "name": "x402-hash-generator",
+    "description": "Compute SHA-256 / SHA-1 / MD5 / SHA-512 of text or JSON. Content addressing and integrity for agents.",
+    "price": "0.006 USDC",
+    "network": "base",
+    "endpoint": "POST /api/hash",
+    "catalog": "GET /catalog",
+    "tags": ["hash", "crypto", "integrity", "content-addressing", "agent"]
+  },
+  {
+    "name": "x402-markdown-to-text",
+    "description": "Convert Markdown to clean plain text. Deterministic strip of formatting for RAG and content pipelines.",
+    "price": "0.009 USDC",
+    "network": "base",
+    "endpoint": "POST /api/plain",
+    "catalog": "GET /catalog",
+    "tags": ["markdown", "text", "rag", "content", "agent"]
+  }
+]
