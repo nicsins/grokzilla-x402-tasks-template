@@ -1,0 +1,21 @@
+# x402 Case Converter
+
+> Deterministic naming-case conversion for agents. Snake, camel, kebab, Pascal, CONSTANT, title and more. No accounts. Pay per call with x402 (USDC on Base).
+
+## Paid Endpoint
+
+- POST /api/convert
+  - Input: `{ "text": "...", "to": "snake|camel|kebab|pascal|constant|title|lower|upper" }`
+  - Output: `{ "success": true, "result": "...", "meta": {...} }`
+  - Price: ~0.007 USDC
+
+## Free Discovery
+
+- GET /catalog
+- GET / (service card)
+
+## Why agents use it
+
+- Zero variance, pure string transforms
+- Token-cheap, high frequency safe
+- Perfect for data cleaning, code generation pipelines, schema mapping
