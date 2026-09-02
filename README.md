@@ -9,7 +9,15 @@ Each template is a production-ready Vercel Edge / serverless function with:
 - Deterministic or low-variance logic preferred by autonomous agents
 - Clear pricing, pay-to address placeholder, and network (Base USDC recommended)
 
-## Daily Generated Tasks (2026-09-01 extended)
+## Daily Generated Tasks (2026-09-02)
+
+| Template | Price Guidance | Primary Use | Deploy Target |
+|----------|----------------|-------------|-----------------|
+| **case-converter** | $0.003 – $0.009 / call | Text → snake/camel/kebab/pascal/constant/title/lower/upper | Vercel Edge |
+| **hash-generator** | $0.003 – $0.008 / call | SHA-256 / SHA-1 / MD5 / SHA-512 of text or JSON | Vercel Edge |
+| **markdown-to-text** | $0.004 – $0.012 / call | Markdown → clean plain text (deterministic strip) | Vercel Edge |
+
+### Previous (2026-09-01 extended)
 
 | Template | Price Guidance | Primary Use | Deploy Target |
 |----------|----------------|-------------|-----------------|
@@ -17,7 +25,7 @@ Each template is a production-ready Vercel Edge / serverless function with:
 | **json-path-extractor** | $0.004 – $0.012 / call | Extract values from nested JSON by dotted / array paths | Vercel Edge |
 | **date-normalizer** | $0.003 – $0.009 / call | Loose dates & timestamps → ISO-8601 / unix | Vercel Edge |
 
-### Earlier today (2026-09-01)
+### Earlier (2026-09-01)
 
 | Template | Price Guidance | Primary Use | Deploy Target |
 |----------|----------------|-------------|-----------------|
@@ -55,7 +63,7 @@ All templates are intentionally lightweight so agents can call them frequently w
 
 ```bash
 # Clone or download a template folder
-cd slug-generator   # or json-path-extractor / date-normalizer / json-flattener ...
+cd case-converter   # or hash-generator / markdown-to-text / slug-generator ...
 npm install
 # Set env: PAY_TO_ADDRESS, FACILITATOR_URL (optional), NETWORK=base
 vercel deploy --prod
@@ -111,5 +119,5 @@ MIT. Built for the Grokzilla / Dragonscale agent economy.
 Daily variants are pushed here and mirrored to Google Drive for offline use.
 
 ---
-Generated / extended 2026-09-01 by Grok + Geta-Paida team.  
+Generated / extended 2026-09-02 by Grok + Geta-Paida team.  
 Next daily batch will continue expanding the specialized microservice catalog.
