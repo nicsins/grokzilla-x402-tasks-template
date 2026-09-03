@@ -1,0 +1,21 @@
+# x402 Query Cleaner
+
+> Deterministic query-string parsing, tracking-param stripping and canonical rebuild for agents. No accounts. Pay per call with x402 (USDC on Base).
+
+## Paid Endpoint
+
+- POST /api/clean
+  - Input: `{ "url": "https://...", "stripTracking": true, "sort": true }`
+  - Output: `{ "success": true, "result": {...}, "meta": {...} }`
+  - Price: ~0.007 USDC
+
+## Free Discovery
+
+- GET /catalog
+- GET / (service card)
+
+## Why agents use it
+
+- Zero variance, pure URL/query transforms
+- Removes utm_*, fbclid, gclid, mc_eid etc.
+- Perfect for canonicalization, caching keys, privacy hygiene
