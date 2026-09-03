@@ -1,0 +1,21 @@
+# x402 String Similarity
+
+> Deterministic string similarity metrics for agents. Levenshtein ratio, Jaccard, Dice coefficient. No accounts. Pay per call with x402 (USDC on Base).
+
+## Paid Endpoint
+
+- POST /api/score
+  - Input: `{ "a": "...", "b": "...", "metric": "levenshtein|jaccard|dice|all" }`
+  - Output: `{ "success": true, "result": number|object, "meta": {...} }`
+  - Price: ~0.008 USDC
+
+## Free Discovery
+
+- GET /catalog
+- GET / (service card)
+
+## Why agents use it
+
+- Zero variance, pure algorithms
+- Token-cheap fuzzy matching for routing, dedup, ranking
+- Perfect for agent memory, tool selection, content clustering
