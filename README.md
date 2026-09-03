@@ -9,7 +9,15 @@ Each template is a production-ready Vercel Edge / serverless function with:
 - Deterministic or low-variance logic preferred by autonomous agents
 - Clear pricing, pay-to address placeholder, and network (Base USDC recommended)
 
-## Daily Generated Tasks (2026-09-02)
+## Daily Generated Tasks (2026-09-03)
+
+| Template | Price Guidance | Primary Use | Deploy Target |
+|----------|----------------|-------------|-----------------|
+| **uuid-toolkit** | $0.003 – $0.009 / call | Generate / validate / parse UUIDs (v4, v7, nil, max) | Vercel Edge |
+| **string-similarity** | $0.004 – $0.012 / call | Levenshtein ratio, Jaccard, Dice coefficient scoring | Vercel Edge |
+| **query-cleaner** | $0.003 – $0.01 / call | Strip tracking params, canonicalize query strings / URLs | Vercel Edge |
+
+### Previous (2026-09-02)
 
 | Template | Price Guidance | Primary Use | Deploy Target |
 |----------|----------------|-------------|-----------------|
@@ -63,7 +71,7 @@ All templates are intentionally lightweight so agents can call them frequently w
 
 ```bash
 # Clone or download a template folder
-cd case-converter   # or hash-generator / markdown-to-text / slug-generator ...
+cd uuid-toolkit   # or string-similarity / query-cleaner / case-converter ...
 npm install
 # Set env: PAY_TO_ADDRESS, FACILITATOR_URL (optional), NETWORK=base
 vercel deploy --prod
@@ -119,5 +127,5 @@ MIT. Built for the Grokzilla / Dragonscale agent economy.
 Daily variants are pushed here and mirrored to Google Drive for offline use.
 
 ---
-Generated / extended 2026-09-02 by Grok + Geta-Paida team.  
+Generated / extended 2026-09-03 by Grok + Geta-Paida team.  
 Next daily batch will continue expanding the specialized microservice catalog.
