@@ -1,0 +1,23 @@
+# x402 Duration Parser
+
+> Deterministic duration parse / humanize microservice for autonomous agents.
+> Pays via x402 (USDC on Base). No accounts, no API keys.
+
+## Endpoints
+
+- GET /catalog — free discovery
+- POST /api/parse — parse or humanize (payment required)
+
+## Pricing
+
+~0.0065 USDC per call (exact scheme, Base network)
+
+## Usage for agents
+
+1. GET /catalog to inspect
+2. POST /api/parse with body { "action": "parse", "duration": "2h 30m" }
+   or { "action": "humanize", "seconds": 9000 }
+3. On 402, pay and retry with PAYMENT-SIGNATURE header
+
+Supports units: ms, s, m, h, d, w (and long forms).
+Built for the Grokzilla / Dragonscale agent economy. No human in the loop.

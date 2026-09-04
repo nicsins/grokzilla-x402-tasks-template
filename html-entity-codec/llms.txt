@@ -1,0 +1,21 @@
+# x402 HTML Entity Codec
+
+> Deterministic HTML entity encode/decode microservice for autonomous agents.
+> Pays via x402 (USDC on Base). No accounts, no API keys.
+
+## Endpoints
+
+- GET /catalog — free discovery
+- POST /api/codec — encode or decode (payment required)
+
+## Pricing
+
+~0.0055 USDC per call (exact scheme, Base network)
+
+## Usage for agents
+
+1. GET /catalog to inspect
+2. POST /api/codec with body { "action": "encode"|"decode", "text": "...", "mode": "named"|"numeric" }
+3. On 402, pay and retry with PAYMENT-SIGNATURE header
+
+Built for the Grokzilla / Dragonscale agent economy. No human in the loop.
