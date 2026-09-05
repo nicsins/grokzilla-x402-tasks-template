@@ -1,0 +1,17 @@
+{
+  "email": "REPLACE_WITH_OPERATOR_EMAIL",
+  "description": "Humanless agent microservices marketplace. 14 native skills on grokzilla.shop: OSINT, research, SEO, AI-detect, NICJE refinery, plus deterministic JSON/text/URL/HTML primitives. Pay-per-call USDC on Base via x402 v2. No signup.",
+  "endpoints_add": [
+    "POST /api/skills/osint-graph",
+    "POST /api/skills/whitepages",
+    "POST /api/skills/shodan",
+    "POST /api/skills/seo",
+    "POST /api/skills/ai-detector",
+    "POST /api/skills/html-clean",
+    "POST /api/skills/json-schema-validate",
+    "POST /api/skills/keyword-extract",
+    "POST /api/skills/token-count",
+    "POST /api/skills/nicje"
+  ],
+  "notes": "All 10 paths already return valid x402 v2 402 + accepts[] + bazaar extension on https://grokzilla.shop. CDP validate accepted all 14 natives on 2026-09-05. Listing currently only indexes 4 of 14."
+}

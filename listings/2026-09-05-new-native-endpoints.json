@@ -1,0 +1,12 @@
+{
+  "purpose": "Proposed first-party natives to add on grokzilla.shop /api/skills/*",
+  "pay_to": "0xDa1Eab46918882f8656a41cF9fCa80e2415369d1",
+  "network": "eip155:8453",
+  "proposed": [
+    {"id": "uuid-toolkit", "path": "/api/skills/uuid-toolkit", "price_usd": 0.003},
+    {"id": "hash-generator", "path": "/api/skills/hash-generator", "price_usd": 0.004},
+    {"id": "slug-generator", "path": "/api/skills/slug-generator", "price_usd": 0.003},
+    {"id": "duration-parser", "path": "/api/skills/duration-parser", "price_usd": 0.004},
+    {"id": "json-path-extract", "path": "/api/skills/json-path-extract", "price_usd": 0.005}
+  ]
+}
