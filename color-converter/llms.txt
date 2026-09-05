@@ -1,0 +1,15 @@
+# x402 Color Converter
+
+Deterministic color space conversion for agents.
+
+POST /api/color
+Body examples:
+  {"hex": "#ff5500"}
+  {"rgb": [255, 85, 0]}
+  {"hsl": [20, 100, 50]}
+
+Returns hex + rgb + hsl in one response.
+Price: ~$0.006 USDC on Base (x402)
+
+Free discovery: GET /catalog
+No human in the loop. Stateless. Agent-native.

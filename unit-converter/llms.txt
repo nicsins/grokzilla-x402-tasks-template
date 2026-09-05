@@ -1,0 +1,11 @@
+# x402 Unit Converter
+
+Deterministic unit conversion microservice for agents.
+
+POST /api/convert
+Body: {"value": 100, "from": "km", "to": "mi"}
+Price: ~$0.007 USDC on Base (x402)
+
+Supports length, mass, temperature (C/F/K), volume, speed.
+Free discovery: GET /catalog
+No human in the loop. Stateless. Agent-native.
