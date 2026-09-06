@@ -1,0 +1,24 @@
+# x402 IP Toolkit
+
+> Deterministic IPv4 validate / normalize / isPrivate / CIDR / int conversion microservice for autonomous agents.
+> Pays via x402 (USDC on Base). No accounts, no API keys.
+
+## Endpoints
+
+- GET /catalog — free discovery
+- POST /api/ip — validate | normalize | isPrivate | cidrContains | toInt | fromInt (payment required)
+
+## Pricing
+
+~0.006 USDC per call (exact scheme, Base network)
+
+## Usage for agents
+
+1. GET /catalog to inspect
+2. POST /api/ip with body e.g.
+   { "action": "isPrivate", "ip": "10.1.2.3" }
+   { "action": "cidrContains", "ip": "192.168.1.50", "cidr": "192.168.0.0/16" }
+   { "action": "normalize", "ip": "192.168.001.001" }
+3. On 402, pay and retry with PAYMENT-SIGNATURE header
+
+Built for the Grokzilla / Dragonscale agent economy. No human in the loop.
