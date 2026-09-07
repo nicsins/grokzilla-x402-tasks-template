@@ -1,0 +1,16 @@
+# x402-text-metrics
+
+> Deterministic text quality metrics for autonomous agents (counts + Shannon entropy).
+
+## Paid endpoint
+- POST /api/metrics  (~0.005 USDC on Base)
+  Body: { "text": "..." }
+
+## Free discovery
+- GET /catalog
+- GET /llms.txt (this file)
+
+## Notes
+- Fully no-human-in-loop
+- Zero external dependencies
+- Useful for pre-filter / routing / cost estimation before heavier LLM calls

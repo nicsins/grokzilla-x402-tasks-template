@@ -1,0 +1,16 @@
+# x402-luhn-check
+
+> Deterministic Luhn algorithm validate / check-digit for autonomous agents.
+
+## Paid endpoint
+- POST /api/luhn  (~0.004 USDC on Base)
+  Body: { "action": "validate"|"checkdigit", "number": "..." }
+
+## Free discovery
+- GET /catalog
+- GET /llms.txt (this file)
+
+## Notes
+- Fully no-human-in-loop
+- Zero external dependencies
+- Useful for card/IMEI/ID hygiene before downstream processing
