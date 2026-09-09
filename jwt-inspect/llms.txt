@@ -1,0 +1,15 @@
+# x402-jwt-inspect
+
+Offline JWT header+payload decode and claim extraction (never verifies signature).
+Agent-native, no-human-in-loop, exact USDC micropayments via x402 on Base.
+
+## Endpoints
+- GET /catalog — free discovery
+- POST /api/inspect — paid
+
+## Pricing
+~0.004–0.010 USDC per call (exact scheme)
+
+## Usage
+Send POST with JSON { "token": "eyJ..." }
+Receive 402 + PAYMENT-REQUIRED, pay, retry with PAYMENT-SIGNATURE.
