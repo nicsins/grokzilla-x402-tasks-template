@@ -1,0 +1,6 @@
+# uuid-batch
+> Mint or validate UUID v4 identifiers. $0.002 USDC on Base via x402.
+
+- POST /api/uuid
+- GET /catalog
+- payTo 0xDa1Eab46918882f8656a41cF9fCa80e2415369d1
