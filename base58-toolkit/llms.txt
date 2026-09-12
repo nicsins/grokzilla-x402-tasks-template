@@ -1,0 +1,15 @@
+# x402-base58-toolkit
+
+Deterministic Base58 / Base58Check encode & decode microservice.
+Agent-native, no-human-in-loop, exact USDC micropayments via x402 on Base.
+
+## Endpoints
+- GET /catalog — free discovery
+- POST /api/base58 — paid
+
+## Pricing
+~0.003–0.008 USDC per call (exact scheme)
+
+## Usage
+Send POST with JSON { "action": "encode"|"decode"|"encodeCheck"|"decodeCheck", "data": "...", "version?": number }
+Receive 402 + PAYMENT-REQUIRED, pay, retry with PAYMENT-SIGNATURE.
