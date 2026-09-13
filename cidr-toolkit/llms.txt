@@ -1,0 +1,12 @@
+# x402 CIDR Toolkit
+
+Parse, match, and expand IPv4/IPv6 CIDR ranges for autonomous agents.
+
+- POST /api/cidr  (paid via x402 exact USDC on Base)
+- GET /catalog    (free discovery)
+
+Actions: parse, contains, expand (limited), summarize.
+
+Price guidance: ~0.005 USDC per call.
+
+No human in the loop. Stateless. Edge-ready.

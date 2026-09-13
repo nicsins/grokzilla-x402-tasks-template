@@ -1,0 +1,12 @@
+# x402 Hash Digest
+
+Compute cryptographic digests (SHA-256, SHA-512, SHA-1, MD5) of text or hex data for agents.
+
+- POST /api/hash  (paid via x402 exact USDC on Base)
+- GET /catalog    (free discovery)
+
+Actions: digest (with algorithm choice).
+
+Price guidance: ~0.003 USDC per call.
+
+No human in the loop. Stateless. Edge-ready. Pure crypto.
