@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /catalog
+Allow: /llms.txt
+Disallow: /api/

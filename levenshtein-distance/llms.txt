@@ -1,15 +1,39 @@
-# x402-levenshtein-distance
+# x402 Levenshtein Distance
 
-Deterministic Levenshtein edit distance + similarity ratio microservice.
-Agent-native, no-human-in-loop, exact USDC micropayments via x402 on Base.
+> Compute Levenshtein or Damerau-Levenshtein edit distance and normalized similarity ratio (0–1). Deterministic pure-JS DP. Pay-per-call via x402 (USDC on Base).
 
 ## Endpoints
-- GET /catalog — free discovery
-- POST /api/distance — paid
+
+- GET /catalog – free discovery
+- GET /api/distance – service info
+- POST /api/distance – paid computation
 
 ## Pricing
-~0.003–0.008 USDC per call (exact scheme)
 
-## Usage
-Send POST with JSON { "a": "...", "b": "..." }
-Receive 402 + PAYMENT-REQUIRED, pay, retry with PAYMENT-SIGNATURE.
+~0.003 – 0.008 USDC per call (default max 0.008 USDC)
+
+## Input
+
+```json
+{
+  "a": "kitten",
+  "b": "sitting",
+  "options": {
+    "damerau": false,
+    "maxLen": 2000
+  }
+}
+```
+
+## Output
+
+```json
+{
+  "success": true,
+  "distance": 3,
+  "similarity": 0.5714,
+  "meta": { "lenA": 6, "lenB": 7, "damerau": false, "algorithm": "levenshtein" }
+}
+```
+
+Ideal for autonomous agents performing fuzzy matching, deduplication, OCR correction scoring, or similarity gating before expensive LLM calls.
