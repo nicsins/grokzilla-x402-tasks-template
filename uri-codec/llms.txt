@@ -1,0 +1,39 @@
+# x402 URI Codec
+
+> Percent-encode, decode, or normalize URI components (UTF-8 safe) with optional extra safe characters. Deterministic. Pay-per-call via x402 (USDC on Base).
+
+## Endpoints
+
+- GET /catalog – free discovery
+- GET /api/codec – service info
+- POST /api/codec – paid encode / decode / normalize
+
+## Pricing
+
+~0.002 – 0.006 USDC per call (default max 0.006 USDC)
+
+## Input
+
+```json
+{
+  "text": "hello world / café?",
+  "action": "encode",
+  "options": {
+    "safe": "/"
+  }
+}
+```
+
+## Output
+
+```json
+{
+  "success": true,
+  "results": [
+    { "input": "hello world / café?", "output": "hello%20world%20/%20caf%C3%A9%3F" }
+  ],
+  "meta": { "count": 1, "action": "encode", "safe": "/" }
+}
+```
+
+Ideal for autonomous agents safely building query strings, path segments, or canonicalizing URLs before hashing / signing / downstream HTTP calls.

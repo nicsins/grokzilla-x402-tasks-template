@@ -1,15 +1,40 @@
-# x402-phonetic-encoder
+# x402 Phonetic Encoder
 
-Soundex + lightweight Double-Metaphone phonetic encoding microservice.
-Agent-native, no-human-in-loop, exact USDC micropayments via x402 on Base.
+> Soundex (classic) + lightweight Metaphone-style phonetic keys for fuzzy name and entity matching. Deterministic. Pay-per-call via x402 (USDC on Base).
 
 ## Endpoints
-- GET /catalog — free discovery
-- POST /api/phonetic — paid
+
+- GET /catalog – free discovery
+- GET /api/encode – service info
+- POST /api/encode – paid encoding
 
 ## Pricing
-~0.003–0.007 USDC per call (exact scheme)
 
-## Usage
-Send POST with JSON { "text": "...", "algorithms?": ["soundex","metaphone"] }
-Receive 402 + PAYMENT-REQUIRED, pay, retry with PAYMENT-SIGNATURE.
+~0.003 – 0.007 USDC per call (default max 0.007 USDC)
+
+## Input
+
+```json
+{
+  "text": ["Smith", "Smythe", "Schmidt"],
+  "options": {
+    "algorithms": ["soundex", "metaphone"]
+  }
+}
+```
+
+## Output
+
+```json
+{
+  "success": true,
+  "results": [
+    { "input": "Smith", "soundex": "S530", "metaphone": "SM0" },
+    { "input": "Smythe", "soundex": "S530", "metaphone": "SM0" },
+    { "input": "Schmidt", "soundex": "S530", "metaphone": "XMT" }
+  ],
+  "meta": { "count": 3, "algorithms": ["soundex", "metaphone"] }
+}
+```
+
+Ideal for autonomous agents resolving people / entities across datasets, CRM deduplication, or building phonetic search indexes without exact spelling.
