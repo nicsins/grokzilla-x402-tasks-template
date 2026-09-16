@@ -1,0 +1,21 @@
+# x402 Jaccard Similarity
+
+> Deterministic set-based similarity (Jaccard + Dice) for agents. Tokenize two strings or accept pre-tokenized arrays. No accounts. Pay per call with x402 (USDC on Base).
+
+## Paid Endpoint
+
+- POST /api/jaccard
+  - Input: `{ "a": string|string[], "b": string|string[], "tokenize"?: "word"|"char" }`
+  - Output: `{ "success": true, "jaccard": number, "dice": number, "meta": {...} }`
+  - Price: ~0.006 USDC
+
+## Free Discovery
+
+- GET /catalog
+- GET / (service card)
+
+## Why agents use it
+
+- Zero variance, pure set math
+- Ideal for fuzzy matching, deduplication, memory similarity gating, and ranking candidates
+- Lightweight and high-frequency safe
