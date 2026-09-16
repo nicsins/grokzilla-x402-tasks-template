@@ -1,0 +1,21 @@
+# x402 Querystring Toolkit
+
+> Deterministic query-string parse, stringify, and normalize for agents. Stable key ordering, array support, percent-encoding. No accounts. Pay per call with x402 (USDC on Base).
+
+## Paid Endpoint
+
+- POST /api/qs
+  - Input: `{ "action": "parse"|"stringify"|"normalize", "input": string|object, "options"?: object }`
+  - Output: `{ "success": true, "result": ..., "meta": {...} }`
+  - Price: ~0.005 USDC
+
+## Free Discovery
+
+- GET /catalog
+- GET / (service card)
+
+## Why agents use it
+
+- Zero variance, pure transform
+- Perfect for canonicalizing URLs before hashing/signing, building safe downstream requests, and cleaning tracking params
+- Lightweight and high-frequency safe
