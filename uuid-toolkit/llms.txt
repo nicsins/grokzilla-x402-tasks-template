@@ -1,12 +1,21 @@
 # x402 UUID Toolkit
 
-Deterministic UUID generate / validate / parse microservice for autonomous agents.
+> Generate, validate, and parse UUIDs (v4 + v7). Extract timestamps. Deterministic, zero external deps. No accounts. Pay per call with x402 (USDC on Base).
 
-- POST /api/uuid  (paid via x402 exact USDC on Base)
-- GET /catalog    (free discovery)
+## Paid Endpoint
 
-Actions: generate (v4|v7), validate, parse, toBytes, fromBytes.
+- POST /api/uuid
+  - Input: `{ "action": "generate"|"validate"|"parse", "version"?: 4|7, "uuid"?: "string" }`
+  - Output: `{ "success": true, "result": {...}, "meta": {...} }`
+  - Price: ~0.005 USDC
 
-Price guidance: ~0.004 USDC per call.
+## Free Discovery
 
-No human in the loop. Stateless. Edge-ready.
+- GET /catalog
+- GET / (service card)
+
+## Why agents use it
+
+- v7 gives time-ordered IDs perfect for event streams and agent memory
+- Pure validation with version + variant checks
+- Token-cheap, high-frequency safe
