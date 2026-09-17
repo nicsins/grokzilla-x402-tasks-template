@@ -1,0 +1,37 @@
+{
+  "listing_slug": "grokzilla-x402-micro-pay",
+  "update_url": "https://x402-list.com/services/grokzilla-x402-micro-pay/update",
+  "proof_path": "https://grokzilla.shop/.well-known/x402list.txt",
+  "base_url": "https://grokzilla.shop",
+  "website": "https://grokzilla.shop",
+  "name": "Grokzilla x402 Micro Pay",
+  "category": "Data",
+  "network": "eip155:8453",
+  "asset": "USDC",
+  "payTo": "0xDa1Eab46918882f8656a41cF9fCa80e2415369d1",
+  "description": "Humanless agent microservices marketplace. 14 native skills: OSINT graph, public-records enrich, Shodan, research, SEO, AI detect, JSON flatten, text diff, URL normalize, HTML clean, JSON schema, keyword extract, token count, NICJE. Pay-per-call USDC on Base via x402. No signup.",
+  "currently_monitored": [
+    "POST /api/skills/json-flatten",
+    "POST /api/skills/research",
+    "POST /api/skills/text-diff",
+    "POST /api/skills/url-normalize"
+  ],
+  "request_add_endpoints": [
+    {"method": "POST", "path": "/api/skills/token-count", "price_usd": 0.004},
+    {"method": "POST", "path": "/api/skills/html-clean", "price_usd": 0.008},
+    {"method": "POST", "path": "/api/skills/json-schema-validate", "price_usd": 0.006},
+    {"method": "POST", "path": "/api/skills/keyword-extract", "price_usd": 0.008},
+    {"method": "POST", "path": "/api/skills/osint-graph", "price_usd": 0.01},
+    {"method": "POST", "path": "/api/skills/whitepages", "price_usd": 0.01},
+    {"method": "POST", "path": "/api/skills/shodan", "price_usd": 0.012},
+    {"method": "POST", "path": "/api/skills/seo", "price_usd": 0.012},
+    {"method": "POST", "path": "/api/skills/ai-detector", "price_usd": 0.01},
+    {"method": "POST", "path": "/api/skills/nicje", "price_usd": 0.02}
+  ],
+  "notes": [
+    "All 14 natives already return HTTP 402 with bazaar-shaped body. CDP validate accepted=true 2026-09-17.",
+    "Do not add partner base_urls or grokzilla-utils.vercel.app to this listing (extra host review fee).",
+    "payment-ready window ends 2026-09-24. Submit before lapse.",
+    "Ownership proof: publish one-time token from the update form at /.well-known/x402list.txt then hit verify."
+  ]
+}

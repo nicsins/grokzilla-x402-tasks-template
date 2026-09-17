@@ -1,0 +1,42 @@
+{
+  "intent": "Fold high-frequency primitives onto grokzilla.shop /api/skills/* so they share payTo 0xDa1Eab46918882f8656a41cF9fCa80e2415369d1 and x402-list monitoring. Do not spawn extra Vercel hosts.",
+  "target_repo": "nicsins/ai-micro-pay",
+  "network": "eip155:8453",
+  "asset": "USDC",
+  "payTo": "0xDa1Eab46918882f8656a41cF9fCa80e2415369d1",
+  "proposed_natives": [
+    {
+      "id": "slugify",
+      "method": "POST",
+      "path": "/api/skills/slugify",
+      "price_usd": 0.002,
+      "description": "Deterministic URL/filename slug from any string. Unicode fold, separator choice, max length.",
+      "why_volume": "Agents emit slugs on every content write. Cheapest possible habit-forming call."
+    },
+    {
+      "id": "uuid_batch",
+      "method": "POST",
+      "path": "/api/skills/uuid-batch",
+      "price_usd": 0.002,
+      "description": "Mint 1-64 UUID v4 or v7 values in one call. Validate existing IDs.",
+      "why_volume": "Idempotency keys and correlation IDs fire every agent loop."
+    },
+    {
+      "id": "hash_digest",
+      "method": "POST",
+      "path": "/api/skills/hash-digest",
+      "price_usd": 0.003,
+      "description": "SHA-256 / SHA-1 / MD5 hex+base64 of a string or canonical JSON. No file upload.",
+      "why_volume": "Content addressing and cache keys. Deterministic, cheap, cacheable."
+    },
+    {
+      "id": "json_pointer",
+      "method": "POST",
+      "path": "/api/skills/json-pointer",
+      "price_usd": 0.004,
+      "description": "RFC 6901 get / exists / list paths against a JSON document.",
+      "why_volume": "Agents already pay for json-flatten; pointer is the read-side twin."
+    }
+  ],
+  "do_not_ship_as_separate_hosts": true
+}
