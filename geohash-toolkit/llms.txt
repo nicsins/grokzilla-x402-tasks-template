@@ -1,6 +1,6 @@
 # x402-geohash-toolkit
 
-Deterministic geohash encode / decode / neighbors / bounding-box microservice.
+Deterministic geohash encode / decode / neighbors microservice.
 Agent-native, no-human-in-loop, exact USDC micropayments via x402 on Base.
 
 ## Endpoints
@@ -8,8 +8,8 @@ Agent-native, no-human-in-loop, exact USDC micropayments via x402 on Base.
 - POST /api/geohash — paid
 
 ## Pricing
-~0.003–0.008 USDC per call (exact scheme)
+~0.004–0.009 USDC per call (exact scheme)
 
 ## Usage
-Send POST with JSON { "action": "encode"|"decode"|"neighbors"|"bbox", ... }
+Send POST with JSON { "action": "encode"|"decode"|"neighbors", "lat"?: number, "lon"?: number, "precision"?: number, "hash"?: string }
 Receive 402 + PAYMENT-REQUIRED, pay, retry with PAYMENT-SIGNATURE.
