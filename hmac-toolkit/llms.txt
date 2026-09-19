@@ -1,0 +1,10 @@
+# x402 HMAC Toolkit
+
+Compute HMAC signatures (SHA-256 / SHA-512) for message authentication.
+
+- POST /api/hmac  { key, message, algorithm?, encoding? }
+- Free discovery: GET /catalog
+- Price: ~0.003–0.008 USDC per call
+- Uses Node crypto only (no external libs). Key never logged.
+
+Agent use cases: request signing, webhook verification helpers, API auth primitives, integrity checks.
