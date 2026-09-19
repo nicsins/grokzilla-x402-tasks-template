@@ -1,0 +1,10 @@
+# x402 Email Canonicalizer
+
+Normalize email addresses for reliable deduplication and matching.
+
+- POST /api/canonicalize  { email, options? }
+- Free discovery: GET /catalog
+- Price: ~0.003–0.007 USDC per call
+- Pure deterministic rules (lowercase, Gmail-style +tag and dot removal, domain cleanup)
+
+Agent use cases: identity resolution, user matching, spam filtering, CRM dedup, account linking.
