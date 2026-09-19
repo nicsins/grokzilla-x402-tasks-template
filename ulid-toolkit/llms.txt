@@ -1,0 +1,10 @@
+# x402 ULID Toolkit
+
+Deterministic ULID (Universally Unique Lexicographically Sortable Identifier) generate, parse, validate, and timestamp extraction.
+
+- POST /api/ulid  { action: "generate"|"parse"|"validate"|"timestamp", ... }
+- Free discovery: GET /catalog
+- Price: ~0.003–0.008 USDC per call (exact scheme, Base recommended)
+- Fully autonomous, no-human-in-loop, pure JS (no external deps beyond runtime)
+
+Agent use cases: sortable unique IDs for logs, events, database keys, agent message ordering, time-based partitioning.
