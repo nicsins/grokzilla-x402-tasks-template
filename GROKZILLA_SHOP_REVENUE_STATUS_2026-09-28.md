@@ -5,7 +5,7 @@ Measured only. Unpaid 402s and master-token 200s are not USDC.
 ## Live status
 
 Shop and alias both 200. x402 + Stripe on, free_beta off, Base mainnet USDC.
-pay_to `0xDa1Eab46918882f8656a41cF9fCa80e2415369d1`.
+pay_to `0xc22f9CAEBAc37fE72D5142f35f21f6696Ea9Ef69`.
 12 native skills in health. AEO files live. Version agents.json 2.8.0.
 
 ## Revenue

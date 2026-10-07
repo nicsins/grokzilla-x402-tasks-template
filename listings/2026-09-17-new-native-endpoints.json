@@ -1,9 +1,9 @@
 {
-  "intent": "Fold high-frequency primitives onto grokzilla.shop /api/skills/* so they share payTo 0xDa1Eab46918882f8656a41cF9fCa80e2415369d1 and x402-list monitoring. Do not spawn extra Vercel hosts.",
+  "intent": "Fold high-frequency primitives onto grokzilla.shop /api/skills/* so they share payTo 0xc22f9CAEBAc37fE72D5142f35f21f6696Ea9Ef69 and x402-list monitoring. Do not spawn extra Vercel hosts.",
   "target_repo": "nicsins/ai-micro-pay",
   "network": "eip155:8453",
   "asset": "USDC",
-  "payTo": "0xDa1Eab46918882f8656a41cF9fCa80e2415369d1",
+  "payTo": "0xc22f9CAEBAc37fE72D5142f35f21f6696Ea9Ef69",
   "proposed_natives": [
     {
       "id": "slugify",

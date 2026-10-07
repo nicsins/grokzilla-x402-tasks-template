@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const PAY_TO = process.env.PAY_TO_ADDRESS || "0xDa1Eab46918882f8656a41cF9fCa80e2415369d1";
+const PAY_TO = process.env.TREASURY_ADDRESS || process.env.PAY_TO_ADDRESS || "0xc22f9CAEBAc37fE72D5142f35f21f6696Ea9Ef69";
 const NETWORK = process.env.NETWORK || "base";
 const MAX_AMOUNT = process.env.MAX_AMOUNT_ATOMIC || "10000";
 
