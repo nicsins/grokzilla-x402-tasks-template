@@ -4,7 +4,7 @@ export async function GET() {
   return NextResponse.json({
     name: "uuid-batch",
     version: "1.0.0",
-    payTo: process.env.PAY_TO_ADDRESS || "0xDa1Eab46918882f8656a41cF9fCa80e2415369d1",
+    payTo: process.env.TREASURY_ADDRESS || process.env.PAY_TO_ADDRESS || "0xc22f9CAEBAc37fE72D5142f35f21f6696Ea9Ef69",
     network: "eip155:8453",
     services: [
       {

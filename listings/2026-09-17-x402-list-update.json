@@ -8,7 +8,7 @@
   "category": "Data",
   "network": "eip155:8453",
   "asset": "USDC",
-  "payTo": "0xDa1Eab46918882f8656a41cF9fCa80e2415369d1",
+  "payTo": "0xc22f9CAEBAc37fE72D5142f35f21f6696Ea9Ef69",
   "description": "Humanless agent microservices marketplace. 14 native skills: OSINT graph, public-records enrich, Shodan, research, SEO, AI detect, JSON flatten, text diff, URL normalize, HTML clean, JSON schema, keyword extract, token count, NICJE. Pay-per-call USDC on Base via x402. No signup.",
   "currently_monitored": [
     "POST /api/skills/json-flatten",
