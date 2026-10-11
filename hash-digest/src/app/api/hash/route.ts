@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createHash } from "crypto";
+import { PAY_TO, NETWORK } from "../../../lib/treasury";
 
 /**
  * x402 Hash Digest – No-human-in-loop microservice
@@ -13,8 +14,6 @@ import { createHash } from "crypto";
  * Input size limited to 1 MB.
  */
 
-const PAY_TO = process.env.TREASURY_ADDRESS || process.env.PAY_TO_ADDRESS || "0xc22f9CAEBAc37fE72D5142f35f21f6696Ea9Ef69";
-const NETWORK = process.env.NETWORK || "base";
 const MAX_AMOUNT = process.env.MAX_AMOUNT_ATOMIC || "3000"; // ~0.003 USDC
 const MAX_BYTES = 1_048_576; // 1 MB
 
