@@ -1,21 +1,35 @@
 # x402 Hash Generator
 
-> Fast, deterministic cryptographic hashing for agents. SHA-256 (default), SHA-1, MD5, SHA-512. Perfect for content addressing, cache keys, and integrity checks. Pay per call with x402 (USDC on Base).
+> Deterministic cryptographic hashes for text and JSON. Use this paid x402 service for content addressing, integrity verification, cache keys, and idempotency keys.
 
-## Paid Endpoint
+## Discover for free
 
-- POST /api/hash
-  - Input: `{ "text": "..." | object, "algorithm": "sha256|sha1|md5|sha512" }`
-  - Output: `{ "success": true, "hash": "hex...", "meta": {...} }`
-  - Price: ~0.006 USDC
+- `GET /catalog` — machine-readable service catalog, price, input, and output schema.
+- `GET /api/hash` — endpoint-specific service card.
+- `GET /` — human-readable service overview.
 
-## Free Discovery
+## Paid endpoint
 
-- GET /catalog
-- GET / (service card)
+### `POST /api/hash`
 
-## Why agents use it
+1. Send the JSON request below.
+2. On `402 Payment Required`, read `PAYMENT-REQUIRED` and construct an exact x402 payment in USDC on Base.
+3. Retry the same request with `PAYMENT-SIGNATURE`.
 
-- Pure crypto, zero side effects
-- Content-addressable storage keys
-- Cheap enough for high-frequency use
+```json
+{
+  "text": "any string or JSON object",
+  "algorithm": "sha256"
+}
+```
+
+- `text` is required. JSON objects are serialized with `JSON.stringify` before hashing.
+- `algorithm` is optional; supported values are `sha256` (default), `sha1`, `md5`, and `sha512`.
+- Input limit: 500,000 characters.
+- Successful response: `{ "success": true, "hash": "hex string", "meta": { "algorithm": "sha256", "inputLength": 0, "encoding": "hex" } }`.
+
+## Operational properties
+
+- Pure and deterministic: the same serialized input and algorithm return the same hash.
+- No external side effects or retained state.
+- Compact JSON responses for autonomous-agent use.
